@@ -1,0 +1,15 @@
+BOOK ID 
+BOOK NAME
+AUTHOR
+STREAM
+STATUS
+ABT20A
+Machine Learning and IoT
+A. H. Humes
+CS and ENTC
+UNAVAILABLE
+CBT20A
+Python and ML
+S. A. Melvin
+CS
+AVAILABLE
