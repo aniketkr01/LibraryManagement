@@ -4,6 +4,8 @@ import java.awt.event.*;
 import Library_Tools.*;
 import javax.swing.*;
 import javax.swing.event.*;
+import javax.swing.table.DefaultTableModel;
+
 import java.util.Date;
 import java.util.ArrayList;
 import java.sql.*;
@@ -138,6 +140,8 @@ class CurrentBook implements ActionListener
 	JTable jt;
 	JLabel jl1,jl2;
 	JButton b1,b2;
+	JPanel jp;
+	JScrollPane jsc;
 	int width=Toolkit.getDefaultToolkit().getScreenSize().width;
 	int height= Toolkit.getDefaultToolkit().getScreenSize().height;
 	CurrentBook()
@@ -147,31 +151,30 @@ class CurrentBook implements ActionListener
 		jl1=new JLabel();
 		jl1.setIcon(new ImageIcon("currentpage.jpeg"));
 		jl1.setBounds(0,0,width-1,height-1);
-		b2=new JButton();
-		b2.setText("Book Id                             Book Name                         Day                         Month                         Date                             Due(Days)");
-		b2.setForeground(Color.BLACK);
-		b2.setBounds(128,90,width-280,22);
-		b2.setFont(new Font("Calibri",Font.BOLD,18));
 		jf=new JFrame();
 		jf.setSize(width,height);
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setLayout(null);
 		String col[]= {"Book Id","Book Name","Day","Month","Year","Due(days)"};
-		jt =new JTable(LibraryMethods.getUserBookDetail(Login_GUI.userid.split("@")[0]),col)
+		String [][]data= LibraryMethods.getUserBookDetail(Login_GUI.userid.split("@")[0]);
+		DefaultTableModel mdl = new DefaultTableModel(data,col);
+		jt =new JTable(mdl)
 		{
 			public boolean isCellEditable(int x ,int y)
 			{
 				return false;
 			}
 		};
+		jsc =new JScrollPane(jt);
 		b1=new JButton("BACK");
 		b1.setBounds(580,40,100,40);
 		b1.addActionListener(this);
-		jt.setBounds(128,120,width-280,height-280);
-		jf.getContentPane().add(jt);  
+		jp =new JPanel();
+		jp.setBounds(128,120,width-280,height-280);
+		jp.add(jsc);
+		jf.getContentPane().add(jp); 
 		jf.getContentPane().add(b1);
 		jf.getContentPane().add(jl1);
-		jf.getContentPane().add(b2);
 		jf.setVisible(true);
 		}
 		catch(Exception ee)
@@ -193,6 +196,8 @@ class AdminBookList implements ActionListener
 	JTextField jtf1,jtf2;
 	JLabel jl1,jl2;
 	JButton b,b1;
+	JScrollPane jsc;
+	JPanel jp;
 	String addDate[]=new String[3];
 	boolean avail =false;
 	int row,col;
@@ -219,8 +224,10 @@ class AdminBookList implements ActionListener
 	    b1=new JButton("BACK");
 	    b1.setBounds(880,64,100,40);
 	    b1.addActionListener(this);
-		jt.setBounds(128,120,width-280,height-280);
-		jf.getContentPane().add(jt);
+	    jp=new JPanel();
+	    jp.add(new JScrollPane(jt));
+		jp.setBounds(128,120,width-280,height-280);
+		jf.getContentPane().add(jp);
 		jf.getContentPane().add(b1);
 		jf.getContentPane().add(jl2);
 		jf.setVisible(true);
@@ -232,7 +239,6 @@ class AdminBookList implements ActionListener
 			jf.dispose();
 			new Admin();
 		}
-		
 	}
 }
 class BookList implements ListSelectionListener,ActionListener
@@ -242,6 +248,7 @@ class BookList implements ListSelectionListener,ActionListener
 	JTextField jtf1,jtf2;
 	JLabel jl1,jl2;
 	JButton b,b1;
+	JPanel jp;
 	String addDate[]=new String[3];
 	boolean avail =false;
 	int row,col;
@@ -280,8 +287,10 @@ class BookList implements ListSelectionListener,ActionListener
 	    jl1.setBounds(20,64,228,40);
 	    jtf1.setBounds(250,64,210,40);
 	    b.setBounds(1000,64,100,40);
-		jt.setBounds(128,120,width-280,height-280);
-		jf.getContentPane().add(jt);
+	    jp=new JPanel();
+	    jp.add(new JScrollPane(jt));
+		jp.setBounds(128,120,width-280,height-280);
+		jf.getContentPane().add(jp);
 		jf.getContentPane().add(jl1);
 		jf.getContentPane().add(jtf1);
 		jf.getContentPane().add(b);
