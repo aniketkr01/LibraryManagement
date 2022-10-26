@@ -12,7 +12,7 @@ public class LibraryMethods
 			
 			String username="root";
 			String url="jdbc:mysql://localhost/MY_LIB";
-			String pass="Androxy@1234";
+			String pass="**********";		//Enter Your Password
 			
 			//Connecting to the database 
 			Connection conn = DriverManager.getConnection(url,username,pass);
