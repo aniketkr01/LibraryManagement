@@ -33,7 +33,7 @@ class Admin implements ActionListener
 		jb3=new JButton();
 		jb4=new JButton();
 		jl1=new JLabel();
-		jl1.setIcon(new ImageIcon("Admin.jpg"));
+		jl1.setIcon(new ImageIcon("img/Admin.jpg"));
 		jl1.setBounds(0,40,width,height-39);
 		mb=new JMenuBar();
 		mb.setBackground(Color.BLACK);
@@ -53,10 +53,10 @@ class Admin implements ActionListener
 		m1.add(m11);
 		m1.add(m12);
 		mb.add(m1);
-		jb1.setIcon(new ImageIcon("AdminButton1.jpg"));
-		jb2.setIcon(new ImageIcon("AdminButton2.jpg"));
-		jb3.setIcon(new ImageIcon("AdminButton3.jpg"));
-		jb4.setIcon(new ImageIcon("AdminButton4.jpg"));
+		jb1.setIcon(new ImageIcon("img/AdminButton1.jpg"));
+		jb2.setIcon(new ImageIcon("img/AdminButton2.jpg"));
+		jb3.setIcon(new ImageIcon("img/AdminButton3.jpg"));
+		jb4.setIcon(new ImageIcon("img/AdminButton4.jpg"));
 		jb1.setBounds(282,180,800,62);
 		jb2.setBounds(282,282,800,62);
 		jb3.setBounds(282,382,800,62);
@@ -149,7 +149,7 @@ class CurrentBook implements ActionListener
 		try
 		{
 		jl1=new JLabel();
-		jl1.setIcon(new ImageIcon("currentpage.jpeg"));
+		jl1.setIcon(new ImageIcon("img/currentpage.jpeg"));
 		jl1.setBounds(0,0,width-1,height-1);
 		jf=new JFrame();
 		jf.setSize(width,height);
@@ -219,7 +219,7 @@ class AdminBookList implements ActionListener
 			}
 		};
 		jl2=new JLabel();
-		jl2.setIcon(new ImageIcon("BookLib.jpeg"));
+		jl2.setIcon(new ImageIcon("img/BookLib.jpeg"));
 		jl2.setBounds(0,0,width,height);
 	    b1=new JButton("BACK");
 	    b1.setBounds(880,64,100,40);
@@ -271,7 +271,7 @@ class BookList implements ListSelectionListener,ActionListener
 		};
 		ListSelectionModel lsm= jt.getSelectionModel();
 		jl2=new JLabel();
-		jl2.setIcon(new ImageIcon("BookLib.jpeg"));
+		jl2.setIcon(new ImageIcon("img/BookLib.jpeg"));
 		jl2.setBounds(0,0,width,height);
 	    lsm.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	    b=new JButton("ADD");
@@ -431,17 +431,17 @@ class UserHomePage implements ActionListener
 		jf.setLayout(null);
 		jl=new JLabel();
 		jl.setBounds(0,0,width,height);
-		jl.setIcon(new ImageIcon("HomePage.jpeg"));
+		jl.setIcon(new ImageIcon("img/HomePage.jpeg"));
 		b1=new JButton();
-		b1.setIcon(new ImageIcon("BookList.png"));
+		b1.setIcon(new ImageIcon("img/BookList.png"));
 		b1.setBounds(282,120,800,100);
 		b1.addActionListener(this);
 		b2=new JButton();
 		b2.setBounds(282,272,800,100);
-		b2.setIcon(new ImageIcon("DigiBook.png"));
+		b2.setIcon(new ImageIcon("img/DigiBook.png"));
 		b2.addActionListener(this);
 		b3=new JButton();
-		b3.setIcon(new ImageIcon("PendingBook.png"));
+		b3.setIcon(new ImageIcon("img/PendingBook.png"));
 		b3.setBounds(282,422,800,100);
 		b3.addActionListener(this);
 		mb=new JMenuBar();
@@ -562,7 +562,7 @@ class Login_GUI implements ActionListener
 		jl1 =new JLabel();
 		jl2 =new JLabel();
 		b1=new JButton();
-		jl1.setIcon(new ImageIcon("home01.jpg"));
+		jl1.setIcon(new ImageIcon("img/home01.jpg"));
 		jl1.setBounds(0,0,w,h);
 		jt1.setFont(new Font("Calibri",Font.BOLD,28));
 		jt1.setText("Username");
@@ -580,7 +580,7 @@ class Login_GUI implements ActionListener
 		jpw.setBounds(571,311,380,48);
 		jpw.setFont(new Font("Calibri",Font.PLAIN,22));
 		b1.setBounds(620,408,100,42);
-		b1.setIcon(new ImageIcon("login.png"));
+		b1.setIcon(new ImageIcon("img/login.png"));
 		b1.addActionListener(this);
 		jf.getContentPane().add(jl1);
 		jf.getContentPane().add(jt1);
